@@ -1,0 +1,317 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --menu-speed: 0.5s;
+}
+
+
+
+
+body {
+  background-color: #0A141E;
+}
+
+
+
+
+@font-face {
+    font-family: "monoclatureregular";
+    src: url('monoclature-webfont.woff') format('woff'),
+         url('monoclature-webfont.ttf') format('truetype'),
+		     url('monoclature-webfont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+a {
+ color: #8C64FF;
+ text-decoration: none;
+ }
+ a:hover {
+ background-color: #00FFAA;
+ color: #000000;
+ }
+ a:active{
+ background-color: #788CA0;
+ color: #0A141E;
+}
+
+a.lientitre {
+ color: #00FFAA;
+ text-decoration: none;
+ }
+ a.lientitre:hover {
+ color: #8C64FF;
+ background-color: #0A141E;
+ }
+ a.lientitre:active{
+ color: #788CA0;
+ background-color: #0A141E;
+}
+
+a.info {
+ color: #283C50;
+ text-decoration: none;
+ }
+ a.info:hover {
+ color: #8C64FF;
+ background-color: #0A141E;
+ }
+ a.info:active{
+ color: #00FFAA;
+ background-color: #0A141E;
+}
+
+
+
+
+
+
+
+
+main{
+  margin:auto;
+  max-width:625px;
+  padding:2%;
+  position: relative;
+}
+
+
+
+
+div#titre {
+  font-family: "monoclatureregular", courier, monospace;
+  font-weight: normal;
+  font-size: 800%;
+  color: #00FFAA;
+  line-height: 100%;
+  text-transform: uppercase;
+  padding-left: 16%;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#texte {
+  font-family: "monoclatureregular", courier, monospace;
+  font-weight: normal;
+  font-size: 120%;
+  color: #B4C8DC;
+  line-height: 125%;
+  text-align: left;
+  position: absolute;
+  padding-bottom: 10%;
+}
+
+
+
+
+.sous-titres {
+	font-family: "monoclatureregular", courier, monospace;
+	font-weight: bold;
+	font-size: 100%;
+	color: #00FFAA;
+	line-height: 125%;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.filet {
+	font-family: "monoclatureregular", courier, monospace;
+	color:#00FFAA;
+}
+
+.info {
+  font-family: "monoclatureregular", courier, monospace;
+  font-weight: bold;
+  font-size: 100%;
+  color: #283C50;
+  line-height: 125%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.italique {
+  font-style: italic;
+}
+
+.exposant {
+	font-size: 62.5%;
+	line-height: 0%;
+	vertical-align: super;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media all and (orientation: portrait) {
+
+
+
+
+  a {
+   color: #877DFF;
+   text-decoration: none;
+   }
+   a:hover {
+   background-color: #00FFAA;
+   color: #000000;
+   }
+   a:active{
+   background-color: #788CA0;
+   color: #0A141E;
+  }
+
+  a.lientitre {
+   color: #00FFAA;
+   text-decoration: none;
+   }
+   a.lientitre:hover {
+   color: #877DFF;
+   background-color: #0A141E;
+   }
+   a.lientitre:active{
+   color: #788CA0;
+   background-color: #0A141E;
+  }
+
+  a.info {
+   color: #283C50;
+   text-decoration: none;
+   }
+   a.info:hover {
+   color: #877DFF;
+   background-color: #0A141E;
+   }
+   a.info:active{
+   color: #00FFAA;
+   background-color: #0A141E;
+  }
+
+
+
+
+  main{
+   margin: auto;
+   max-width:98vw;
+   padding:2%;
+   position: relative;
+  }
+
+
+
+
+  div#titre {
+   font-family: "monoclatureregular", courier, monospace;
+   font-weight: normal;
+   font-size: 1140%;
+   color: #00FFAA;
+   line-height: 100%;
+   text-transform: uppercase;
+   padding-left: 3%;
+   height: 100vh; /* à mettre en 100vh si je veux le titre en pleine page */ /* 70vh pour version titre + texte en dessous */
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  div#texte {
+   font-family: "monoclatureregular", courier, monospace;
+   font-weight: normal;
+   font-size: 195%;
+   color: #B4C8DC;
+   line-height: 125%;
+   text-align: left;
+   position: absolute;
+   top: 95vh; /* à mettre en 95vh si je veux le titre en pleine page */ /* 55vh pour version titre + texte en dessous */
+   padding-bottom: 5%;
+  }
+
+
+
+
+  /* décaler les repères de catégories à cause du menu/header */
+
+   div#cosmologie { padding-top: 200px; }
+   div#exploration { padding-top: 200px; }
+   div#gravitationquantique { padding-top: 200px; }
+   div#histoireterre { padding-top: 200px; }
+   div#histoiresciences { padding-top: 200px; }
+   div#matiereenergienoire { padding-top: 200px; }
+   div#multivers { padding-top: 200px; }
+   div#physiquequantique { padding-top: 200px; }
+   div#relativite { padding-top: 200px; }
+   div#sciencefiction { padding-top: 200px; }
+   div#temps { padding-top: 200px; }
+   div#trousnoirs { padding-top: 200px; }
+   div#titre01 { padding-top: 200px; }
+
+
+
+
+ .sous-titres {
+	 font-family: "monoclatureregular", courier, monospace;
+	 font-weight: bold;
+	 font-size: 100%;
+	 color: #00FFAA;
+	 line-height: 125%;
+	 text-align: left;
+	 text-transform: uppercase;
+ }
+
+ .filet {
+   font-family: "monoclatureregular", courier, monospace;
+   color:#00FFAA;
+ }
+
+ .info {
+   font-family: "monoclatureregular", courier, monospace;
+   font-weight: bold;
+   font-size: 100%;
+   color: #283C50;
+   line-height: 125%;
+   text-align: left;
+   text-transform: uppercase;
+ }
+
+ .italique {
+   font-style: italic;
+ }
+
+ .exposant {
+   font-size: 62.5%;
+	 line-height: 0%;
+	 vertical-align: super;
+ }
+
+
+
+
+}

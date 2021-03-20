@@ -1,0 +1,437 @@
+@font-face {
+    font-family: "monoclatureregular";
+    src: url('monoclature-webfont.woff') format('woff'),
+         url('monoclature-webfont.ttf') format('truetype'),
+		     url('monoclature-webfont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+a {
+ color: #8C64FF;
+ text-decoration: none;
+ }
+ a:hover {
+ background-color: #00FFAA;
+ color: #000000;
+ }
+ a:active{
+ background-color: #788CA0;
+ color: #0A141E;
+ }
+
+a.home {
+ color: #788CA0;
+ text-decoration: none;
+ }
+ a.home:hover {
+ background-color: #00FFAA;
+ color: #000000;
+ }
+ a.home:active{
+ background-color: #8C64FF;
+ color: #0A141E;
+}
+
+
+
+
+
+
+
+
+.menu-wrap {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
+/* zone cliquable du menu hamburger */
+.menu-wrap .toggler {
+  position: fixed; /* CHANGER ?????? */
+  top: 4.6%; /* CHANGER ? */
+  left: 42px; /* CHANGER ? */
+  opacity: 0;
+  height: 40px; /* CHANGER ? */
+  width: 40px; /* CHANGER ? */
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* containeur du menu (en 100vh ça donne une bande qui fait toute la hauteur) */
+.menu-wrap .hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 125px; /* 8vw */ /* CHANGER ? */
+  background: transparent; /* transparent / #0A141E / red */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  z-index: 1;
+}
+
+
+
+
+/* Hamburger line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  top: 5%; /* CHANGER ? */
+  left: 0%; /* CHANGER ? */
+  width: 40%; /* CHANGER ? */
+  height: 5px; /* CHANGER ? */
+  background: #8C64FF;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+/* Hamburger top & bottom line */
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+  content: "";
+  position: absolute;
+  top: 12px; /* CHANGER ? */
+  left: 0;
+  background: inherit;
+  height: 5px; /* CHANGER ? */
+  width: 100%;
+  z-index: 1;
+}
+.menu-wrap .hamburger > div:after {
+  top: -12px; /* CHANGER ? */
+}
+
+
+
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+
+
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0; /* place le menu caché hors de l'écran mais le décentre quand déroulé */
+  background: #0A141E;
+  height: 100vh;
+  width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all var(--menu-speed) ease;
+}
+.menu > div {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+
+
+
+/* TEXTES MENU */
+
+/*organisation du texte du menu*/
+.menu ul {
+  list-style: none;
+  text-align: left;
+}
+
+/*interlignage et marges gauche droite du texte du menu*/
+.menu li {
+  padding: 0% 0%;
+}
+
+.menu > div a {
+  text-decoration: none;
+  font-family: "monoclatureregular", courier, monospace;
+  font-weight: bold;
+  font-size: 125%;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+.menu a:hover {
+  color: #0A141E;
+  font-weight: bold;
+  transition: color 0s linear;
+}
+
+
+
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  opacity: 1;
+  width: 100vw;
+  transition: all var(--menu-speed) linear;
+}
+.menu-wrap .toggler:checked ~ .menu > div {
+  opacity: 1;
+  transition: opacity 0.25s ease-in;
+}
+.menu-wrap .toggler:checked ~ .menu > div a {
+  opacity: 1;
+  transition: opacity 0.25s ease-in;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media all and (orientation: portrait) {
+
+
+
+  a {
+   color: #877DFF;
+   text-decoration: none;
+   }
+   a:hover {
+   background-color: #00FFAA;
+   color: #000000;
+   }
+   a:active{
+   background-color: #788CA0;
+   color: #0A141E;
+   }
+
+  a.home {
+   color: #788CA0;
+   text-decoration: none;
+   }
+   a.home:hover {
+   background-color: #00FFAA;
+   color: #000000;
+   }
+   a.home:active{
+   background-color: #877DFF;
+   color: #0A141E;
+  }
+
+
+
+
+
+
+
+
+  .menu-wrap {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+  }
+
+  /* zone cliquable du menu hamburger */
+  .menu-wrap .toggler {
+    position: fixed; /* CHANGER ?????? */
+    top: 3%; /* CHANGER ? */
+    left: 45%; /* CHANGER ? */
+    opacity: 0;
+    height: 100px; /* CHANGER ? */
+    width: 100px; /* CHANGER ? */
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  /* containeur du menu (en 100vh ça donne une bande qui fait toute la hauteur) */
+  .menu-wrap .hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 100vw;
+    background: #0A141E; /* transparent / #0A141E / red */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+
+
+
+  /* Hamburger line */
+  .menu-wrap .hamburger > div {
+    position: relative;
+    top: 0%; /* CHANGER ? */
+    left: 0%; /* CHANGER ? */
+    width: 10vw; /* CHANGER ? */
+    height: 12px; /* CHANGER ? */
+    background: #877DFF;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+  }
+
+  /* Hamburger top & bottom line */
+  .menu-wrap .hamburger > div:before,
+  .menu-wrap .hamburger > div:after {
+    content: "";
+    position: absolute;
+    top: 30px; /* CHANGER ? */
+    left: 0;
+    background: inherit;
+    height: 12px; /* CHANGER ? */
+    width: 100%;
+    z-index: 1;
+  }
+  .menu-wrap .hamburger > div:after {
+    top: -30px; /* CHANGER ? */
+  }
+
+
+
+
+  /* Toggler Animation */
+  .menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+  }
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  /* Rotate on hover when checked */
+  .menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+  }
+
+
+
+
+  .menu {
+    position: fixed;
+    top: -100vh;
+    left: 0; /* place le menu caché hors de l'écran mais le décentre quand déroulé */
+    background: #0A141E;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all var(--menu-speed) ease;
+  }
+  .menu > div {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%; /* ou remettre en vh ? mais décale des zones cliquables */
+    width: 100%; /* ou remettre en vw ? mais décale des zones cliquables */
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+  }
+
+
+
+
+  /* TEXTES MENU */
+
+  /*organisation du texte du menu*/
+  .menu ul {
+    list-style: none;
+    text-align: left;
+    margin:auto;
+    max-width:75vw;
+  }
+
+  /*interlignage et marges gauche droite du texte du menu*/
+  .menu li {
+    padding: 0% 0%;
+  }
+  .menu > div a {
+    text-decoration: none;
+    font-family: "monoclatureregular", courier, monospace;
+    font-weight: bold;
+    font-size: 280%;
+    opacity: 0;
+    transition: opacity 0.12s ease-out;
+  }
+  .menu a:hover {
+    color: #0A141E;
+    font-weight: bold;
+    transition: color 0s linear;
+  }
+
+
+
+
+  /* Show Menu */
+  .menu-wrap .toggler:checked ~ .menu {
+    opacity: 1;
+    width: 100vw;
+    transition: all var(--menu-speed) linear;
+    transform-origin: top;
+    transform: translateY(100vh);
+  }
+  .menu-wrap .toggler:checked ~ .menu > div {
+    opacity: 1;
+    transition: opacity 0.25s ease-in;
+  }
+  .menu-wrap .toggler:checked ~ .menu > div a {
+    opacity: 1;
+    transition: opacity 0.25s ease-in;
+  }
+
+}
